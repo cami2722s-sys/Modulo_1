@@ -15,3 +15,6 @@
 
 ---
 <https://github.com/cami2722s-sys/Modulo_1>
+<https://github.com/aguilarmaite/Modulo_1>
+<https://github.com/Igna-Coronado24/Modulo1>
+<https://github.com/rocio-alarcon/Modulo_1>
