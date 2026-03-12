@@ -22,5 +22,4 @@ Es el lenguaje que interpreta el código escrito.
 |Joule|Cálculo científico y numérico de alto rendimiento|
 
 ## Ejemplo Práctico
-
-<img src="https://github.com/aguilarmaite/Modulo_1/blob/main/Captura%20de%20pantalla%202026-03-11%20233056.png" (aca cada uno tiene que tener subida la captura en su cuenta y poner el link de esa captura) > <br>
+<img src="https://github.com/cami2722s-sys/Modulo_1/blob/main/Captura%20de%20pantalla%20Colaboraty.png"> <br>
