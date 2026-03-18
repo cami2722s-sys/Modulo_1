@@ -1,0 +1,163 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[default]{raleway}
+\usepackage[margin=1cm, a4paper]{geometry}
+\usepackage{graphicx} % Necesario para manejar imágenes
+\usepackage{xcolor}
+\usepackage{fontawesome}
+\usepackage{paracol}
+\usepackage{tikz} % Necesario para el header y el círculo
+\usepackage{titlesec}
+\usepackage{array}
+
+%------------------------------------------------------------------ Colores
+\definecolor{cvpink}{HTML}{D81B60} % El Rosa principal
+\definecolor{cvred}{HTML}{a62121}
+\definecolor{headerblue}{HTML}{2e6fad}
+\definecolor{cvpurple}{HTML}{6e2ead}
+\definecolor{skilllabelcolour}{HTML}{eeeeee}
+\definecolor{iconcolour}{HTML}{333333}
+\definecolor{headercolour}{HTML}{D81B60}
+
+%------------------------------------------------------------------ Comandos Custom
+\newcommand{\bg}[3]{%
+  \colorbox{#1}{\bfseries\color{#2}#3}%
+}
+
+\newcommand{\cvevent}[5]{%
+  {#1} & \textbf{#2} \hfill \color{cvred}{#3} \\
+  & \textit{#4} \\
+  & {\footnotesize #5} \vspace{0.5em} \\
+}
+
+\newcommand{\cvdegree}[6]{%
+  {#1} & \textbf{#2} -- #3 \hfill \color{headerblue}{#4} \\
+  & \textit{#5} \vspace{0.5em} \\
+}
+
+\newcommand{\barrule}[3]{%
+  \textcolor{#3}{\rule{#1\textwidth}{#2}}%
+}
+
+%------------------------------------------------------------------ Header con Foto CIRCULAR
+\newcommand{\simpleheader}[5]{
+  \begin{tikzpicture}[remember picture,overlay]
+    % Fondo de color del encabezado
+    \node [rectangle, fill=#1, anchor=north, minimum width=\paperwidth, minimum height=3.5cm] (box) at (current page.north){};
+    
+    % NUEVO: Foto de perfil CIRCULAR con borde blanco elegante
+    \node [
+        circle,              % Forma circular
+        %draw=,           % Color del borde
+       % line width=0pt,       % Grosor del borde
+        minimum size=3cm,   % Tamaño total del círculo visible
+        anchor=west,
+        xshift=2cm,           % Separación del borde izquierdo
+        path picture={        % Esta es la magia: recorta la imagen dentro del círculo
+            \node [anchor=center] at (path picture bounding box.center) {
+                % Asegurate que la altura/ancho sea suficiente para llenar el círculo
+                \includegraphics[height=6.5cm, keepaspectratio]{perfilcami.jpg}
+            };
+        }
+    ] at (box.west) {};
+
+    % Nombre y Apellido (centrados en la franja)
+    \node [anchor=center] (name) at (box) {%
+      \fontsize{35pt}{40pt}\selectfont \color{#5} #2 \textbf{#3}
+    };
+    % Título/Puesto
+    \node [anchor=north] at (name.south) {%
+      \fontsize{15pt}{18pt}\selectfont \color{#5} #4
+    };
+  \end{tikzpicture}
+  \vspace{2.5cm} % Espacio debajo del header para que no se superponga el texto
+}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Invocamos el header con la nueva foto circular
+\simpleheader{headercolour}{Camila}{Sotelo}{Estudiante de Ingeniería Industrial}{white}
+
+\vspace{1.5em}
+
+\columnratio{0.23}[0.75]
+\begin{paracol}{2}
+
+% --- COLUMNA IZQUIERDA (Perfil y Datos) ---
+\footnotesize
+{\flushright
+
+\bg{cvpink}{white}{Perfil}\\[0.5em]
+Tengo 23 años, soy una joven proactiva que va en busca de sus objetivos. Capaz de aprender rápido y de forma eficiente. Me considero ordenada, organizada y comprometida.
+\bigskip
+
+\bg{cvpink}{white}{Personal} \\[0.5em]
+Nacionalidad: Argentina \\
+Edad: 23 años \\
+Ubicación: Godoy Cruz, Mendoza
+
+\bigskip
+
+\bg{cvpink}{white}{Objetivos} \\[0.5em]
+• Progresar en todo ámbito. \\
+• Independencia y adaptación. \\
+• Adquirir experiencias.
+
+\bigskip
+
+\bg{cvpink}{white}{Idiomas}\\[0.5em]
+\textbf{Español}: Nativo \\
+\textbf{Inglés}: Intermedio \\
+(6 años en AMICANA)
+
+\vspace{4em}
+
+% Iconos de contacto con el color rosa
+\color{cvpink}\faPhone \hspace{0.5em} \color{black}261-6505923 \\
+\color{cvpink}\faAt \hspace{0.5em} \color{black}camis8576@gmail.com \\
+\color{cvpink}\faMapMarker \hspace{0.5em} \color{black}Godoy Cruz, Mza
+
+}
+
+\switchcolumn
+
+% --- COLUMNA DERECHA (Experiencia y Educación) ---
+\small
+\section*{Resumen de Experiencia}
+\begin{tabular}{r| p{0.55\textwidth}}
+    \cvevent{2024}{Atención al público}{SUBE}{Terminal de Ómnibus}{Manejo de sistema de transporte, colocación de abonos y gestión de bajas.}
+    \cvevent{2022}{Moza}{Piscomar}{Restaurante Peruano}{Atención al cliente, trabajo bajo presión y multitarea energética.}
+    \cvevent{2019}{Pasantía Min. Economía}{Gobierno}{Mendoza}{Manejo de Sistema BUHO-Gestión, análisis de obras y reportes en Excel.}
+\end{tabular}
+
+\vspace{2em}
+
+\section*{Formación Academica}
+\begin{tabular}{r| p{0.55\textwidth}}
+    \cvdegree{Actual}{Ingeniería Industrial}{3º Año}{UNCuyo}{}
+    \cvdegree{2019}{Bachiller en Economía}{Secundario}{Esc. M. Scalabrini}{}
+\end{tabular}
+
+\vspace{2em}
+
+\section*{Habilidades}
+\begin{tabular}{ll}
+    % Barra de progreso rosa para Excel
+    \bg{skilllabelcolour}{iconcolour}{Excel} & \barrule{0.4}{0.5em}{cvpink} \\
+    \bg{skilllabelcolour}{iconcolour}{Gestión} & \barrule{0.35}{0.5em}{cvpurple} \\
+    \bg{skilllabelcolour}{iconcolour}{Sistemas} & \barrule{0.3}{0.5em}{cvpurple} \\
+\end{tabular}
+
+\vspace{2em}
+
+\section*{Voluntariado}
+\begin{tabular}{r| p{0.55\textwidth}}
+    \cvevent{2019}{Pastoral de calle}{Almuerzo}{Voluntariado}{Servicio de almuerzo comunitario.}
+    \cvevent{2018}{Agua Escondida}{Malargüe}{Recreación}{Servicio a la comunidad juvenil en zonas rurales.}
+\end{tabular}
+
+\end{paracol}
+
+\end{document}

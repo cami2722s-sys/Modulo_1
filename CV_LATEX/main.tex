@@ -1,0 +1,139 @@
+
+\documentclass[lighthipster]{simplehipstercv}
+\usepackage[utf8]{inputenc}
+\usepackage[default]{raleway}
+\usepackage[margin=1cm, a4paper]{geometry}
+\usepackage{xcolor}
+\usepackage{fontawesome} % Para los íconos \faPhone, \faAt, etc.
+\usepackage{paracol}    % Para las columnas
+\usepackage{tikz}       % Para los círculos y fondos de colores
+
+%------------------------------------------------------------------ Variables
+\newlength{\rightcolwidth}
+\newlength{\leftcolwidth}
+\setlength{\leftcolwidth}{0.23\textwidth}
+\setlength{\rightcolwidth}{0.75\textwidth}
+
+%------------------------------------------------------------------
+\title{CV Camila Sotelo}
+\author{Camila Sotelo}
+\date{Marzo 2026}
+
+\pagestyle{empty}
+
+\definecolor{cvgreen}{HTML}{358235}
+\definecolor{cvred}{HTML}{a62121}
+\definecolor{headerblue}{HTML}{2e6fad}
+\definecolor{cvpurple}{HTML}{6e2ead}
+\definecolor{skilllabelcolour}{HTML}{eeeeee}
+\definecolor{iconcolour}{HTML}{333333}
+\definecolor{headercolour}{HTML}{358235}
+\begin{document}
+
+\thispagestyle{empty}
+
+\section*{Start}
+
+\simpleheader{headercolour}{Camila}{Sotelo}{Estudiante de Ingeniería Industrial}{white}
+
+%------------------------------------------------
+\subsection*{}
+\vspace{4em}
+
+\setlength{\columnsep}{1.5cm}
+\columnratio{0.23}[0.75]
+\begin{paracol}{2}
+\hbadness5000
+
+\paracolbackgroundoptions
+
+\footnotesize
+{\setasidefontcolour
+\flushright
+\begin{center}
+    \roundpic{perfil.jpg} % Sube tu foto con este nombre
+\end{center}
+
+\bg{cvgreen}{white}{Perfil}\\[0.5em]
+{\footnotesize
+Tengo 23 años, soy una joven proactiva que va en busca de sus objetivos. Capaz de aprender rápido y de forma eficiente. Me considero ordenada, organizada y comprometida.} [cite: 4, 5]
+\bigskip
+
+\bg{cvgreen}{white}{Personal} \\[0.5em]
+Nacionalidad: Argentina [cite: 9] \\
+Edad: 23 años [cite: 4] \\
+Ubicación: Godoy Cruz, Mendoza [cite: 9]
+
+\bigskip
+
+\bg{cvgreen}{white}{Objetivos} \\[0.5em]
+• Progresar en todo ámbito. [cite: 27] \\
+• Independencia y adaptación. [cite: 28, 29] \\
+• Adquirir experiencias. [cite: 30]
+
+\bigskip
+
+\bg{cvgreen}{white}{Idiomas}\\[0.5em]
+\textbf{Español}: Nativo \\
+\textbf{Inglés}: Intermedio [cite: 7] \\
+(6 años en AMICANA)
+
+\vspace{4em}
+
+\infobubble{\faPhone}{cvgreen}{white}{261-6505923} [cite: 24]
+\infobubble{\faAt}{cvgreen}{white}{camis8576@gmail.com} [cite: 25]
+\infobubble{\faMapMarker}{cvgreen}{white}{Godoy Cruz, Mza} [cite: 9]
+
+}
+%-----------------------------------------------------------
+\switchcolumn
+
+\small
+\section*{Resumen de Experiencia}
+
+\begin{tabular}{r| p{0.5\textwidth} c}
+    \cvevent{2024}{Atención al público}{SUBE}{Terminal de Ómnibus \color{cvred}}{Manejo de sistema de transporte, colocación de abonos y gestión de bajas.}[cite: 22, 23] \\
+    \cvevent{2022}{Moza}{Piscomar}{Restaurante Peruano} \color{cvred}{Atención al cliente, trabajo bajo presión y multitarea energética.}[cite: 20, 21] \\
+    \cvevent{2019}{Pasantía Ministerio de Economía}{Gobierno}{Mendoza \color{cvred}}{Manejo de Sistema BUHO-Gestión, análisis de obras y reportes en Excel.}[cite: 17, 18, 19]
+\end{tabular}
+\vspace{3em}
+
+\begin{minipage}[t]{0.4\textwidth}
+\section*{Formación}
+\begin{tabular}{r p{0.6\textwidth} c}
+    \cvdegree{Actual}{Ing. Industrial}{3º Año}{UNCuyo \color{headerblue}}{}{uncuyo.png}  \\
+    \cvdegree{2019}{Bachiller Economía}{Secundario}{Esc. M. Scalabrini \color{headerblue}}{}{escuela.png} [cite: 11]
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.3\textwidth}
+\section*{Habilidades}
+\begin{tabular}{r @{\hspace{0.5em}}l}
+     \bg{skilllabelcolour}{iconcolour}{Excel} &  \barrule{0.8}{0.5em}{cvgreen} [cite: 18]\\
+     \bg{skilllabelcolour}{iconcolour}{Gestión} & \barrule{0.7}{0.5em}{cvpurple} [cite: 23] \\
+     \bg{skilllabelcolour}{iconcolour}{Sistemas} & \barrule{0.6}{0.5em}{cvpurple} [cite: 18] \\
+\end{tabular}
+\end{minipage}
+
+\section*{Voluntariado y Comunidad}
+\begin{tabular}{r| p{0.5\textwidth} c}
+    \cvevent{2019}{Pastoral de calle}{Almuerzo}{Voluntariado \color{cvred}}{Servicio de almuerzo comunitario.}{pastoral.png} [cite: 14] \\
+    \cvevent{2018--2019}{Godoy Cruz Joven}{Participación}{Social \color{cvred}}{Actividades recreativas y comunitarias.}{gc.png} [cite: 16] \\
+    \cvevent{2018}{Agua Escondida}{Malargüe}{Recreación \color{cvred}}{Servicio a la comunidad juvenil en zonas rurales.}{agua.png} [cite: 15]
+\end{tabular}
+
+\vfill{}
+
+%----------------------------------------------------------------------------------------
+%	FINAL FOOTER
+%----------------------------------------------------------------------------------------
+\setlength{\parindent}{0pt}
+\begin{minipage}[t]{\rightcolwidth}
+\begin{center}\fontfamily{\sfdefault}\selectfont \color{black!70}
+{\small Camila Sotelo \icon{\faEnvelopeO}{cvgreen}{} camis8576@gmail.com \icon{\faMapMarker}{cvgreen}{} Mendoza, Argentina \icon{\faPhone}{cvgreen}{} 261-6505923 
+}
+\end{center}
+\end{minipage}
+
+\end{paracol}
+
+\end{document}
