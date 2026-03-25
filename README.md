@@ -26,6 +26,5 @@
 
 <https://github.com/francabielsa-rgb/Modulo_1>
 
-## Logo del equipo
-<img src="https://github.com/cami2722s-sys/Modulo_1/blob/main/Logo%20de%20equipo%20Los%20T%C3%A9cnicos.png" width="400"/>
+
 
